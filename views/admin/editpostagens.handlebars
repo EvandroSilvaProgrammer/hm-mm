@@ -1,0 +1,39 @@
+<!---->
+<div class="conteudo">
+  {{#each erros}}
+    <div class="alert alert-danger"> {{texto}} </div>
+  {{else}}
+
+  {{/each}}
+  <div class="conteudo-form">
+    <form class="" action="/admin/postagens/new" method="post">
+      <h2>Formulario de edição de Postagens:</h2>
+      <input type="hidden" name="id" value="{{postagem._id}}">
+      <div class="form-group">
+        <label for="titulo" style="color: #3f4954">Titulo: </label>
+        <input type="text" name="titulo" id="titulo" placeholder="Nome do post" class="form-control" value="{{postagem.titulo}}" required><br>
+      </div>
+      <div class="form-group">
+        <label for="conteudo" style="color: #3f4954" >Conteudo: </label>
+        <input type="text" name="conteudo" id="conteudo" placeholder="Conteudo do post" class="form-control" value="{{postagem.conteudo}}"><br>
+      </div>
+      <div class="form-group">
+        <label for="descricao" style="color: #3f4954">Descrição do post: </label>
+        <textarea name="descricao" class="form-control" >{{postagem.descricao}}</textarea><br>
+      </div>
+      <div class="form-group">
+        <label for="categoria" style="color: #3f4954">Categoria:</label>
+                <select name="categoria" class="form-select">
+                    {{#each categorias}}
+                        <option value="{{_id}}">{{nome}}</option>
+                    {{else}}
+                        <option value="">Nenhuma Categoria registrada</option>
+                    {{/each}}
+                </select><br>
+      </div>
+      <input type="submit" name="criarPost" value="Criar Post" class="button-input" style="margin-top:20px">
+  </form>
+
+  </div>
+
+</div>

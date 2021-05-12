@@ -1,0 +1,35 @@
+<div class="conteudo">
+
+  <h1 id="subtitulo">Categorias: </h1>
+
+  <a href="/admin/categorias/add">
+    <button type="button" name="button" class="btn2">Nova Categoria</button>
+  </a>
+  <table>
+      <tr id="header">
+        <th>ID</th>
+        <th>Nome</th>
+      <!--  <th>Imagem</th> -->
+        <th>Descrição</th>
+        <th>Slug</th>
+        <th>Alterar</th>
+        <th>Eliminar</th>
+      </tr>
+
+      {{#each categorias}}
+      <tr>
+        <td> {{_id}} </td>
+        <td> {{nome}} </td>
+        <!-- <td> {{imagem}} </td> -->
+        <td> {{descricao}} </td>
+        <td> {{slug}} </td>
+        <td> <a href="/admin/categorias/edit/{{_id}}">Alterar</a> </td>
+        <td> <a href="/admin/categorias/delete/{{_id}}" onclick="eliminar()">Eliminar</a> </td>
+      </tr>
+      {{else}}
+
+      {{/each}}
+
+  </table>
+
+</div>

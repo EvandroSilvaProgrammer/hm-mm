@@ -1,0 +1,34 @@
+<div class="conteudo">
+
+  <h1 id="subtitulo">Usuarios Cadastrados: </h1>
+
+  <a href="/usuarios/registro">
+    <button type="button" name="button" class="btn2">Novo Usuario</button>
+  </a>
+  <table>
+      <tr id="header">
+        <th>ID</th>
+        <th>Nome</th>
+      <!--  <th>Imagem</th> -->
+        <th>Email</th>
+        <th>Permissão</th>
+        <th>Alterar</th>
+        <th>Eliminar</th>
+      </tr>
+
+      {{#each usuarios}}
+      <tr>
+        <td> {{_id}} </td>
+        <td> {{nome}} </td>
+        <td> {{email}} </td>
+        <td> {{eAdmin}} </td>
+        <td> <a href="/admin/categorias/edit/{{_id}}">Alterar</a> </td>
+        <td> <a href="/admin/categorias/delete/{{_id}}" onclick="eliminar()">Eliminar</a> </td>
+      </tr>
+      {{else}}
+
+      {{/each}}
+
+  </table>
+
+</div>

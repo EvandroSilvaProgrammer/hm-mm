@@ -1,0 +1,36 @@
+<div class="conteudo">
+  <h1 id="subtitulo">Postagens: </h1>
+
+  <a href="/admin/postagens/add">
+    <button type="button" name="button" class="btn2">Nova Postagem</button>
+  </a>
+  <table>
+      <tr id="header">
+        <th>ID</th>
+        <th>Titulo</th>
+        <th>Conteudo</th>
+        <th>Slug</th>
+        <th>Descrição</th>
+        <th>Categoria</th>
+        <th>Alterar</th>
+        <th>Eliminar</th>
+      </tr>
+
+      {{#each postagens}}
+      <tr>
+        <td> {{_id}} </td>
+        <td> {{titulo}} </td>
+        <td> {{conteudo}} </td>
+        <td> {{slug}} </td>
+        <td> {{descricao}} </td>
+        <td> {{categoria.nome}} </td>
+        <td> <a href="/admin/postagens/edit/{{_id}}">Alterar</a> </td>
+        <td> <a href="/admin/postagens/delete/{{_id}}" onclick="eliminar()">Eliminar</a> </td>
+      </tr>
+      {{else}}
+
+      {{/each}}
+
+  </table>
+
+</div>
